@@ -27,20 +27,22 @@ const questionUser = prompt(`Inserisci tua e-mail`);
 
 
 let emailFound = false; //4) creo una variabile che inizializzo a false cioè non ricercato 
-
+emailFound = `E-mail non valida. Riprova!`;
 
 // 3) se l'email dell'utente è presente puo accedere altrimenti no quindi mi creo un ciclo di ricerca
 for (let index=0; index < emailAccess.length; index++) {
-    console.log(emailAccess[index]);
+    // console.log(emailAccess[index]);
 
-    if (questionUser==emailAccess[index]){  // se l'email è stata trovata allora:
+    if (questionUser == emailAccess[index]){  // se l'email è stata trovata allora:
         // console.log(`Accesso e-mail valido!`);
-        emailFound = true; //la variabile emailFound sarà vera
+        emailFound = true;
+        emailFound = `E-mail valida per l'accesso in chat`;
+        console.log([index] + " - " + emailAccess[index]); //visualizzo in console la posizione della email e l'email inserita.
     } else{
-        
+
     }
 
 }
 
-console.log(emailFound);  //altrimenti risulterà false cioè non trovata. 
-
+console.log(emailFound); //altrimenti risulterà false cioè non trovata. 
+alert(emailFound);  
